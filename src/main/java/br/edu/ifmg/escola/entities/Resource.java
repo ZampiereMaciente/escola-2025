@@ -27,13 +27,14 @@ public class Resource {
     private Integer position;
     private String imgUri;
 
+    @Enumerated(EnumType.STRING)
+    private ResourceType resourceType;
+
     @ManyToOne
     @JoinColumn(name = "offer_id")
     private Offer offer;
 
-    @Enumerated(EnumType.STRING)
-    private ResourceType resourceType;
-
-
+    @OneToMany(mappedBy = "resource")
+    private List<Section> sections = new ArrayList<>();
 
 }
