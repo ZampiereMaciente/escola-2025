@@ -32,6 +32,10 @@ public class Offer {
     private Course course;
 
     @OneToMany(mappedBy = "offer")
-    private List<Resource> offers = new ArrayList<>();
+    private List<Resource> resources = new ArrayList<>();
+
+    @OneToMany(mappedBy = "offer")
+    private List<Topic> topics = new ArrayList<>();
+
 }
 
